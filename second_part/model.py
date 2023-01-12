@@ -4,7 +4,7 @@ class Entertainment:
         self.release_year = release_year
         self._likes = 0
 
-    def likes(self):
+    def give_like(self):
         self._likes += 1
 
     @property
@@ -38,7 +38,17 @@ class TvShow(Entertainment):
         return f'{self.title} - {self.release_year} - {self.seasons} temporadas - {self.likes} likes'
 
 
-class Playlist(list):
+class Playlist:
     def __init__(self, name, shows):
         self.name = name
-        super().__init__(shows)
+        self._shows = shows
+
+    def __getitem__(self, item):
+        return self._shows[item]
+
+    def __len__(self):
+        return len(self._shows)
+
+    @property
+    def list(self):
+        return self._shows
