@@ -16,7 +16,7 @@ lucifer = TvShow('lucifer', 2015, 5)
 list_of_shows = [avengers, this_is_us, scream, lucifer]
 weekend_playlist = Playlist('Weekend Playlist', list_of_shows)
 
-# Neste caso, na iteração, o método é reescrito em cada classe,
-# imprimindo de maneira correta para ambos os casos (polimorfismo)
-for show in weekend_playlist.shows:
+print(f'Tamanho da playlist: {len(weekend_playlist)}')
+
+for show in weekend_playlist:
     print(show)
